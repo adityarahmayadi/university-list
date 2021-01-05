@@ -1,0 +1,9 @@
+{
+  "name": "university-list",
+  "version": "1.0.0",
+  "description": "University list from http://universities.hipolabs.com/ API",
+  "main": "index.js",
+  "repository": "https://github.com/adityarahmayadi/university-list.git",
+  "author": "adityarahmayadi",
+  "license": "MIT"
+}
