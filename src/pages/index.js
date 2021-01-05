@@ -1,9 +1,10 @@
 import React from 'react'
+import { Box, Text } from 'goods-core'
 
 const IndexPages = () => (
-  <div>
-    <p>Hello World</p>
-  </div>
+  <Box w='100'>
+    <Text>Hello</Text>
+  </Box>
 )
 
 export default IndexPages
