@@ -1,0 +1,6 @@
+{
+  "name": "University List App",
+  "short_name": "University List App",
+  "start_url": ".",
+  "display": "standalone"
+}
