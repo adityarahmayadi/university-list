@@ -1,15 +1,14 @@
-import React, { lazy, Suspense } from 'react'
+import React, { Suspense } from 'react'
 import { GoodsProvider } from 'goods-core'
 import { xenditTheme } from '@xendit/assets/styles'
 import { AppProvider } from '@xendit/contexts/app.context'
-
-const Home = lazy(() => import(/* webpackChunkName: "home" */ '@xendit/pages'))
+import Routes from './routes'
 
 const App = () => (
   <Suspense fallback=''>
     <GoodsProvider theme={xenditTheme}>
       <AppProvider>
-        <Home />
+        <Routes />
       </AppProvider>
     </GoodsProvider>
   </Suspense>
