@@ -36,7 +36,7 @@ export const menus = [
     url: '/newsletter',
   },
   {
-    name: 'Settings',
-    url: '/settings',
+    name: 'About',
+    url: '/about',
   },
 ]

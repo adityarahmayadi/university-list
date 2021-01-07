@@ -6,7 +6,7 @@ const initialState = {
   universities: [],
 }
 
-const AppStateContext = createContext()
+const AppStateContext = createContext(initialState)
 const AppDispatchContext = createContext()
 
 const reducer = produce((state, action) => {
@@ -39,7 +39,7 @@ export const AppProvider = ({ children }) => {
   const [state, dispatch] = useApp()
   return (
     <AppDispatchContext.Provider value={dispatch}>
-      <AppDispatchContext.Provider value={state}>{children}</AppDispatchContext.Provider>
+      <AppStateContext.Provider value={state}>{children}</AppStateContext.Provider>
     </AppDispatchContext.Provider>
   )
 }

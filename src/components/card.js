@@ -3,12 +3,12 @@ import { Box, Image, Text } from 'goods-core'
 import { getRandomImage } from '@xendit/utils/helpers'
 
 const Card = ({ name, country, website, code }) => (
-  <Box w='420px' radius='8px' shadow='5px 8px 24px 5px rgba(208, 216, 243, 0.6)' overflow='hidden'>
+  <Box w radius='8px' shadow='5px 8px 24px 5px rgba(208, 216, 243, 0.6)' overflow='hidden'>
     <Box w bg='red20' h='240px' fAlign='center' fJustify='center'>
       <Image w h='240px' src={getRandomImage()} objectFit='cover' />
     </Box>
     <Box fDir='row' fAlign='center' fJustify='space-between' p='16px'>
-      <Box>
+      <Box f='3'>
         <Text as='h1' fSize='16px' weight='500'>
           {name}
         </Text>
