@@ -8,13 +8,13 @@ const outputPath = path.resolve(__dirname, '../dist')
 
 module.exports = {
   entry: {
-    main: './src/index.js'
+    main: './src/index.js',
   },
   output: {
     path: outputPath,
     publicPath: '/',
     filename: 'js/[name].bundle.js',
-    chunkFilename: 'js/[name]-[contenthash].js'
+    chunkFilename: 'js/[name]-[contenthash].js',
   },
   module: {
     rules: [
@@ -22,26 +22,26 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       // images
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource'
+        type: 'asset/resource',
       },
       // fonts and svgs
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg)$/,
-        type: 'asset/inline'
-      }
-    ]
+        type: 'asset/inline',
+      },
+    ],
   },
   resolve: {
     extensions: ['.js'],
     modules: [sourcePath, 'node_modules'],
     alias: {
-      '@xendit': sourcePath
-    }
+      '@xendit': sourcePath,
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -52,11 +52,11 @@ module.exports = {
         removeComments: true,
         collapseWhitespace: true,
         minifyCSS: true,
-        minifyJS: true
-      }
+        minifyJS: true,
+      },
     }),
     new webpack.DefinePlugin({
-      __DEV__: process.env.NODE_ENV !== 'production'
+      __DEV__: process.env.NODE_ENV !== 'production',
     }),
   ],
 }

@@ -3,7 +3,7 @@ import produce from 'immer'
 import isEqual from 'react-fast-compare'
 
 const initialState = {
-  universities: []
+  universities: [],
 }
 
 const AppStateContext = createContext()
@@ -11,9 +11,9 @@ const AppDispatchContext = createContext()
 
 const reducer = produce((state, action) => {
   const { type, payload = {} } = action
-  switch(type){
+  switch (type) {
     case 'SET_UNIVERSITIES':
-      if(!isEqual(state.universities, payload.universities)){
+      if (!isEqual(state.universities, payload.universities)) {
         state.universities = payload.universities
       }
       return
@@ -36,12 +36,10 @@ export const useAppContext = () => {
 }
 
 export const AppProvider = ({ children }) => {
-  const [ state, dispatch ] = useApp()
-  return(
+  const [state, dispatch] = useApp()
+  return (
     <AppDispatchContext.Provider value={dispatch}>
-      <AppDispatchContext.Provider value={state}>
-        {children}
-      </AppDispatchContext.Provider>
+      <AppDispatchContext.Provider value={state}>{children}</AppDispatchContext.Provider>
     </AppDispatchContext.Provider>
   )
 }

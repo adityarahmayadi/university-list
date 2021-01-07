@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Text, Icon } from 'goods-core'
 
-const Navbar = () => (
+const Navbar = ({ title }) => (
   <Box
     w
     p='16px'
@@ -13,7 +13,7 @@ const Navbar = () => (
     <Box fDir='row' fAlign='center' fJustify='flex-start'>
       <Icon name='note' c='blue60' mr='12px' />
       <Text fSize='24px' as='h1'>
-        University List App
+        {title}
       </Text>
     </Box>
 

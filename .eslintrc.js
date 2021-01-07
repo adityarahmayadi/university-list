@@ -4,12 +4,12 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
-  plugins: ['unused-imports'],
   env: {
     es6: true,
     node: true,
     browser: true,
   },
+  plugins: ['react-hooks'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 8,
@@ -18,25 +18,17 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ignorePatterns: ['/node_modules/**', '/dist/**'],
-    rules: {
-      'no-unused-vars': 'off',
-      'unused-imports/no-unused-imports': 'warn',
-      'unused-imports/no-unused-vars': [
-        'warn',
-        {
-          vars: 'all',
-          varsIgnorePattern: '^_',
-          args: 'after-used',
-          argsIgnorePattern: '^_',
-        },
-      ],
-      'prettier/prettier': ['error'],
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
+  },
+  ignorePatterns: ['/node_modules/**', '/dist/**'],
+  rules: {
+    'no-unused-vars': ['warn', { args: 'none', argsIgnorePattern: 'req|res|next|val' }],
+    'prettier/prettier': ['error'],
+    'react/prop-types': 0,
+    'react-hooks/exhaustive-deps': ['off'],
+  },
+  settings: {
+    react: {
+      version: 'detect',
     },
   },
 }

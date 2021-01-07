@@ -8,6 +8,6 @@ module.exports = {
     contentBase: './public',
     hot: true,
     historyApiFallback: true,
-    port: 3000
-  }
+    port: 3000,
+  },
 }

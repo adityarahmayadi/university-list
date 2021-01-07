@@ -6,7 +6,7 @@ module.exports = {
       analyzerMode: 'static',
       reportFilename: './report.html',
       defaultSizes: 'gzip',
-      generateStatsFile: true
-    })
-  ]
+      generateStatsFile: true,
+    }),
+  ],
 }
